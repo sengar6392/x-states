@@ -43,9 +43,6 @@ function App() {
       );
       const data = await response.json();
       setStates(data);
-      // setSelectedState("")
-      // setCities([])
-      // setSelectedCity("")
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +54,6 @@ function App() {
       );
       const data = await response.json();
       setCities(data);
-      // setSelectedCity("")
     } catch (error) {
       console.log(error);
     }
@@ -122,6 +118,7 @@ function App() {
           </option>
         ))}
       </select>
+      {selectedCity && selectedState && selectedCountry && <div>You selected {selectedCity}, {selectedState}, {selectedCountry}</div>}
     </>
   );
 }
